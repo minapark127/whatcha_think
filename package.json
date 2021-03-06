@@ -5,5 +5,18 @@
   "main": "index.js",
   "repository": "https://github.com/minapark127/whatcha_think",
   "author": "Mina Park",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/node": "^7.13.0",
+    "@babel/preset-env": "^7.13.9"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  }
 }
