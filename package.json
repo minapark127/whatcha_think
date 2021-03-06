@@ -1,0 +1,9 @@
+{
+  "name": "whatcha_think",
+  "version": "1.0.0",
+  "description": "check movie reviews by NYT critics",
+  "main": "index.js",
+  "repository": "https://github.com/minapark127/whatcha_think",
+  "author": "Mina Park",
+  "license": "MIT"
+}
