@@ -19,3 +19,21 @@ export const getReviews = async (limit) => {
     console.error(error);
   }
 };
+
+export const searchReview = async (query) => {
+  try {
+    const {
+      data: { results },
+    } = await axios(BASE_SEARCH_URL, {
+      params: {
+        offset: 20,
+        order: "by-publication-date",
+        query,
+        "api-key": process.env.NYT_KEY,
+      },
+    });
+    return results;
+  } catch (error) {
+    console.error(error);
+  }
+};
