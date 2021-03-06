@@ -1,3 +1,27 @@
 type Query {
-  name: String!
+  reviews(limit: Int): [Review]!
+}
+
+type Review {
+  display_title: String!
+  critics_pick: Int!
+  byline: String!
+  headline: String!
+  summary_short: String
+  publication_date: String
+  opening_date: String
+  date_updated: String
+  link: Link
+  multimedia: Multimedia
+}
+
+type Link {
+  url: String!
+  suggested_link_text: String
+}
+
+type Multimedia {
+  src: String
+  width: Int
+  height: Int
 }

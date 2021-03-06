@@ -1,6 +1,8 @@
+import { getReviews } from "./db";
+
 const resolvers = {
   Query: {
-    name: () => "Mina",
+    reviews: (_, { limit }) => getReviews(limit),
   },
 };
 
