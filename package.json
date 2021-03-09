@@ -7,18 +7,23 @@
   "author": "Mina Park",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10",
     "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.10",
     "axios": "^0.21.1",
+    "core-js": "3",
     "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.8",
-    "@babel/node": "^7.13.0",
-    "@babel/preset-env": "^7.13.9"
-  },
+  "devDependencies": {},
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js"
+    "dev:start": "nodemon --exec babel-node src/index.js",
+    "start": "node build/index.js",
+    "prestart": "yarn run build",
+    "copy": "cp -R src/graphql/schema.graphql build",
+    "build": "yarn run babel src --out-dir build && yarn run copy",
+    "prebuild": "rm -rf build"
   }
 }
