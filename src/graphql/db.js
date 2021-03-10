@@ -26,7 +26,6 @@ export const searchReview = async (query) => {
       data: { results },
     } = await axios(BASE_SEARCH_URL, {
       params: {
-        offset: 20,
         order: "by-publication-date",
         query,
         "api-key": process.env.NYT_KEY,
