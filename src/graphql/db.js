@@ -36,3 +36,20 @@ export const searchReview = async (query) => {
     console.error(error);
   }
 };
+
+export const searchReviewer = async (reviewer) => {
+  try {
+    const {
+      data: { results },
+    } = await axios(BASE_SEARCH_URL, {
+      params: {
+        order: "by-publication-date",
+        reviewer,
+        "api-key": process.env.NYT_KEY,
+      },
+    });
+    return results;
+  } catch (error) {
+    console.error(error);
+  }
+};

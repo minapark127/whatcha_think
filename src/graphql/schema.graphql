@@ -1,6 +1,7 @@
 type Query {
   reviews(limit: Int): [Review]!
   search(query: String): [Review]
+  reviewer(reviewer: String): [Review]
 }
 
 type Review {
